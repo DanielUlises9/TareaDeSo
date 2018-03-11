@@ -40,6 +40,28 @@ namespace Planificador_de_Procesos
             }
             return (float)tat / _process.Length;
         }
+         /// <summary>
+        /// Se supone que estos son mis metodos perrones, que le van al crusazul Xds
+        /// </summary>
+        public void FillingShortest()
+        {
+            for(int j = 0; j<_process.Length; j++){
+                FindingShortest();
+            }
+        }
+        public void FindingShortest()
+        {
+            for (int i = 0; i < _process.Length; i++)
+            {
+                if (_process[i] > _process[i + 1])
+                {
+                    int shortest = _process[i];
+                    _process[i] = _process[i + 1];
+                    _process[i + 1] = shortest;
+                }
+            }
+        }
+        ///oraleeeeeeeeeeeeeeeeeeeee
 
 
         public string show()
@@ -51,6 +73,8 @@ namespace Planificador_de_Procesos
             }
             return processes;
         }
+        
+        
     }
 }
 
