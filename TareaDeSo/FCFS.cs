@@ -26,7 +26,7 @@ namespace Planificador_de_Procesos
             }
         }*/
         int tat = 0;
-
+        int temp = 0;
         public float Waitedtime(int max)
         {
            for(int i = 0; i < _process.Length; i++)
@@ -35,7 +35,8 @@ namespace Planificador_de_Procesos
             }
            for(int i = 0; i < _process.Length; i++)
             {
-                _waitingtime[i] = tat + _process[i];
+                _waitingtime[i] = temp + _process[i];
+                temp += _process[i];
                 tat += _waitingtime[i];
             }
             return (float)tat / _process.Length;
